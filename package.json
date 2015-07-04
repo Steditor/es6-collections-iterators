@@ -1,0 +1,27 @@
+{
+  "name": "es6-collections-iterators",
+  "description": "Adds missing values, keys and entries functions to native es6 collection implementations",
+  "license": "MIT",
+  "version": "0.1.0",
+  "main": "iterators.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Steditor/es6-collections-iterators.git"
+  },
+  "keywords": [
+    "es6-collections",
+    "map",
+    "set",
+    "iterator",
+    "values",
+    "keys",
+    "entries"
+  ],
+  "author": "Stefan Neubert",
+  "contributors": "Stefan Neubert",
+  "bugs": {
+    "url": "https://github.com/Steditor/es6-collections-iterators/issues"
+  },
+  "homepage": "https://github.com/Steditor/es6-collections-iterators",
+  "dependencies": {}
+}
