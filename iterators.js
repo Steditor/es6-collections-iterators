@@ -13,6 +13,24 @@
     }
   }
 
+  if (typeof Set != 'undefined') {
+    if (typeof Set.prototype.keys == 'undefined') {
+      Set.prototype.keys = setValues;
+    }
+  }
+
+  function setToArray() {
+    var values = new Array(this.size);
+    var i = 0;
+    this.forEach(function(value) { values[i++] = value; });
+    return values
+  }
+
+  function setValues() {
+    var values = setToArray.call(this);
+    return sharedIterator(values);
+  }
+
   function mapToArray() {
     var values = new Array(this.size);
     var keys = new Array(this.size);
