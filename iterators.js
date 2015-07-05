@@ -14,6 +14,9 @@
   }
 
   if (typeof Set != 'undefined') {
+    if (typeof Set.prototype.entries == 'undefined') {
+      Set.prototype.entries = setEntries;
+    }
     if (typeof Set.prototype.values == 'undefined') {
       Set.prototype.values = setValues;
     }
@@ -27,6 +30,11 @@
     var i = 0;
     this.forEach(function(value) { values[i++] = value; });
     return values
+  }
+
+  function setEntries() {
+    var values = setToArray.call(this);
+    return sharedIterator(values, values);
   }
 
   function setValues() {
