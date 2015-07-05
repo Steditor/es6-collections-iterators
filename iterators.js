@@ -14,6 +14,9 @@
   }
 
   if (typeof Set != 'undefined') {
+    if (typeof Set.prototype.values == 'undefined') {
+      Set.prototype.values = setValues;
+    }
     if (typeof Set.prototype.keys == 'undefined') {
       Set.prototype.keys = setValues;
     }
