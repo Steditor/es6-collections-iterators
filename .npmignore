@@ -1,0 +1,4 @@
+node_modules
+test
+*.iml
+karma.conf.js
