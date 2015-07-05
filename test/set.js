@@ -80,4 +80,38 @@ describe('Set prototype functions', function(){
 
     expect(second).to.deep.equal(first);
   });
+
+  it('should iterate over entries of a filled set', function() {
+    var iterator = set.entries();
+    var first = iterator.next();
+    var second = iterator.next();
+    var third = iterator.next();
+    var fourth = iterator.next();
+    var fifth = iterator.next();
+
+    expect(first.done).to.be.false;
+    expect(first.value).to.deep.equal(['a', 'a']);
+
+    expect(second.done).to.be.false;
+    expect(second.value).to.deep.equal(['b', 'b']);
+
+    expect(third.done).to.be.false;
+    expect(third.value).to.deep.equal(['c', 'c']);
+
+    expect(fourth.done).to.be.true;
+    expect(fourth.value).to.equal(undefined);
+
+    expect(fifth).to.deep.equal(fourth);
+  });
+
+  it('should iterate over entries of an empty set', function() {
+    var iterator = emptyset.entries();
+    var first = iterator.next();
+    var second = iterator.next();
+
+    expect(first.done).to.be.true;
+    expect(first.value).to.equal(undefined);
+
+    expect(second).to.deep.equal(first);
+  });
 });
