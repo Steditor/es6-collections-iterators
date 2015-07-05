@@ -2,6 +2,9 @@
 
   //Polyfill global objects
   if (typeof Map != 'undefined') {
+    if (typeof Map.prototype.values == 'undefined') {
+      Map.prototype.values = mapValues;
+    }
     if (typeof Map.prototype.keys == 'undefined') {
       Map.prototype.keys = mapKeys;
     }
@@ -13,6 +16,11 @@
     var i = 0;
     this.forEach(function(value, key) { values[i] = value; keys[i++] = key; });
     return { values: values, keys: keys };
+  }
+
+  function mapValues() {
+    var entries = mapToArray.call(this);
+    return sharedIterator(entries.values);
   }
 
   function mapKeys() {
