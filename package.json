@@ -2,7 +2,7 @@
   "name": "es6-collections-iterators",
   "description": "Adds missing values, keys and entries functions to native es6 collection implementations",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "iterators.js",
   "repository": {
     "type": "git",
